@@ -24,3 +24,5 @@ def homepage():
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0', port=8080, debug=True)
+
+#day 17,18 nohup nosqul and crud
