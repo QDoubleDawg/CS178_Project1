@@ -1,2 +1,4 @@
 creds.py
 *.pem
+__pycache__/
+*.pyc

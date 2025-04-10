@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Marketplace Home</title>
+</head>
+<body>
+    <h1>Top 10 Listings</h1>
+    <ul>
+        {% for item in results %}
+            <li>{{ item.title }} — ${{ item.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
