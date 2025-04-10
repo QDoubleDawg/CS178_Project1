@@ -27,3 +27,8 @@ def execute_query(query, args=()):
             return cur.fetchall()
     finally:
         conn.close()
+
+def get_top_listings():
+    query1 = "SELECT title, price FROM Listings LIMIT 10;"
+    top_listings = execute_query(query1)
+    return top_listings
