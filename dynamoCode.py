@@ -6,25 +6,14 @@ from botocore.exceptions import ClientError
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 table = dynamodb.Table('Users')
 
-
-def create_user():
-    username = input("Username: ")
-    first_name = input("First name: ")
-    last_name = input("Last name: ")
-    email = input("Email: ")
-    
-
+# updated to now work with flask, og was used for testing
+def create_user(user_data):
     try:
-        table.put_item(Item={
-            'username': username,
-            'first_name': first_name,
-            'last_name': last_name,
-            'email': email,
-
-        })
+        table.put_item(Item=user_data)
         print("User created!")
     except ClientError as e:
         print("Error:", e.response['Error']['Message'])
+
 
 # I only needed to get the user, i had no reason to keep the get all users implimentation; changed dirctions for my prject so i changed it to get a single user
 def get_user(username):
