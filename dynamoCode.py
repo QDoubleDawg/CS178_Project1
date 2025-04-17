@@ -26,14 +26,16 @@ def create_user():
     except ClientError as e:
         print("Error:", e.response['Error']['Message'])
 
-
-def get_all_users():
+# I only needed to get the user, i had no reason to keep the get all users implimentation; changed dirctions for my prject so i changed it to get a single user
+def get_user(username):
     try:
-        response = table.scan()
-        return response.get('Items', [])
+        response = table.get_item(Key={"username": username})
+        return response.get("Item")
+    
     except ClientError as e:
-        print("Error getting users:", e.response['Error']['Message'])
-        return []
+        print("Error fetching user:", e.response['Error']['Message'])
+        return None
+
 
 
 def update_user_password():
