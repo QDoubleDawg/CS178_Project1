@@ -42,7 +42,7 @@ CampusCart is a full-stack web app that helps college students buy and sell used
 
 ---
 
-## 🚀 How to Run It
+## How to Run It
 
 1. SSH into your EC2 instance
 2. Locate project directory
