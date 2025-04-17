@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>College Marketplace Home</title>
+    <title>CampusCart | Buy & Sell Used Items</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Top 10 Listings</h1>
-    <ul>
-        {% for item in results %}
-            <li>{{ item.title }} — ${{ item.price }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container text-center mt-5">
+        <h1 class="mb-4">Welcome to <strong>CampusCart</strong></h1>
+        <p class="lead">A student marketplace for buying & selling used stuff on campus.</p>
+
+        <div class="mt-4">
+            <a href="/signup" class="btn btn-primary btn-lg m-2">Sign Up</a>
+            <a href="/login" class="btn btn-success btn-lg m-2">Log In</a>
+            <a href="/about" class="btn btn-info btn-lg m-2">About Page</a>
+        </div>
+    </div>
 </body>
 </html>

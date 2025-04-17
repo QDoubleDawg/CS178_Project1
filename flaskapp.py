@@ -13,8 +13,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    listings = get_top_listings()
-    return render_template('index.html', results=listings)
+    return render_template('index.html')
 
 
 
