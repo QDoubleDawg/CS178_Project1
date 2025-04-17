@@ -32,3 +32,18 @@ def get_top_listings():
     query1 = "SELECT title, price FROM Listings LIMIT 10;"
     top_listings = execute_query(query1)
     return top_listings
+
+def get_all_listings():
+    query = """
+        SELECT 
+            Listings.title, 
+            Listings.description, 
+            Listings.price, 
+            Users.name AS seller_name, 
+            Users.email AS contact_email, 
+            Categories.name AS category_name
+        FROM Listings
+        JOIN Users ON Listings.user_id = Users.id
+        JOIN Categories ON Listings.category_id = Categories.id;
+    """
+    return execute_query(query)
