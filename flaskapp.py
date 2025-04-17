@@ -59,6 +59,11 @@ def login():
             return render_template("login.html", message="Invalid login. Try again.")
     return render_template("login.html")
 
+@app.route("/listings")
+def listings():
+    listings_data = get_all_listings()
+    return render_template("listings.html", listings=listings_data)
+
 
 
 # these two lines of code should always be the last in the file
