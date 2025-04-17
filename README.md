@@ -1,6 +1,6 @@
 # CampusCart
 
-CampusCart is a full-stack web app that helps college students buy and sell used items like textbooks, furniture, clothes, and electronics. It offers a streamlined experience for signing up, browsing listings, messaging sellers, and managing item data with both SQL and DynamoDB.
+CampusCart is a full-stack web app that helps college students buy and sell used items like textbooks, furniture, clothes, and electronics. It offers a streamlined experience for signing up, browsing listings, messaging sellers, and manages item and user data with both SQL and DynamoDB.
 
 ---
 
