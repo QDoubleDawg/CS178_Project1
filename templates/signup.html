@@ -1,3 +1,4 @@
+<!-- I figured out how to make the input have different types, such as for password it doesn't display what the user is typing in -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,31 @@
 </head>
 <body>
     <h1>Create an Account</h1>
+    
+    {% if message %}
+    <p style="color: red;">{{ message }}</p>
+  {% endif %}   
+    
     <form action="{{ url_for('signup') }}" method="post">
+
+        <!-- for making the username-->
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br>
 
+        <!-- for the users first name-->
         <label for="first_name">First Name:</label><br>
         <input type="text" id="first_name" name="first_name" required><br>
 
+        <!-- for the users last name-->
         <label for="last_name">Last Name:</label><br>
         <input type="text" id="last_name" name="last_name" required><br>
+
+        <!-- for the users email, formatted like an email-->
 
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email" required><br>
 
+        <!-- for the users passowrd, formatted so that it displays dots instead of the characters the user enters-->
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br>
 
