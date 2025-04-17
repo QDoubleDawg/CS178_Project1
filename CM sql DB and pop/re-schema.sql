@@ -1,8 +1,12 @@
-/* I used chat gpt to create the database and populate the tables.
-The link for the conversation is right here: https://chatgpt.com/share/67f81f8c-cb44-8006-9def-c3d6c387d59f */
--- Drop existing tables
+/*I had a lot of problmes withmy join query so i am dropping them and restarting with populating them with data with an additional id value*/
 
--- Recreate tables
+USE CollegeMarketplace;
+DROP TABLE IF EXISTS Messages;
+DROP TABLE IF EXISTS Listings;
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Categories;
+
+
 CREATE TABLE Users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
