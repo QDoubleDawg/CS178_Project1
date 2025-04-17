@@ -24,17 +24,40 @@ def about():
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
+        username = request.form["username"]
+        user = get_user(username)
+        
+        if user:
+            # tells the user that the username they entered is already taken 
+            return render_template("signup.html", message="Username already taken.")
+
         user_data = {
-            "username": request.form["username"],
+            "username": username,
             "first_name": request.form["first_name"],
             "last_name": request.form["last_name"],
             "email": request.form["email"],
             "password": request.form["password"]
         }
+
         create_user(user_data)
-        flash("Account created!", "success")
-        return redirect(url_for("homepage"))
+        return redirect(url_for("listings"))
+
     return render_template("signup.html")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        user = get_user(username)
+
+        if user and user.get("password") == password:
+            return redirect(url_for("listings"))
+        else:
+            # Instead of flash, just pass a message directly to the template
+            return render_template("login.html", message="Invalid login. Try again.")
+    return render_template("login.html")
 
 
 
